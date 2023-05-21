@@ -14,8 +14,8 @@ def cart():
     if 'cart' not in session or len(session['cart']) == 0:
         cart = []
     cart = session['cart']
-    total = sum([_ for product in cart])
-    return render_template('cart.html', cart=cart)
+    total = sum([product['price'] for product in cart])
+    return render_template('cart.html', cart=cart, total=total)
 
 @app.route('/add_to_cart', methods=['POST'])
 def add_to_cart():
