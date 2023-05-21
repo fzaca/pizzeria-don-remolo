@@ -2,12 +2,18 @@
 
 :root {
     /* Paleta colores */
-    --color-primary: #e74423; /* Color primario */
-    --color-secondary: #f1f0de; /* Color secundario */
-    --color-text-primary: #333; /* Color de texto principal */
-    --color-text-secondary: #333; /* Color de texto principal */
-    --color-background-secondary: #333; /* Color de texto principal */
-    --color-background: #f1f0de; /* Color de fondo */
+    --color-primary: #e74423;
+    /* Color primario */
+    --color-secondary: #f1f0de;
+    /* Color secundario */
+    --color-text-primary: #333;
+    /* Color de texto principal */
+    --color-text-secondary: #e74423;
+    /* Color de texto principal */
+    --color-background-secondary: #e74423;
+    /* Color de texto principal */
+    --color-background: #f1f0de;
+    /* Color de fondo */
     /* Tipografia */
     --normal: 18px;
     /* Espaciado */
@@ -25,11 +31,7 @@ body {
     background-color: var(--color-background);
 }
 
-.navbar {
-    box-shadow: var(--box);
-}
-
-.navbar img {
+.logo {
     width: 70px;
 }
 
@@ -37,8 +39,16 @@ body {
     background-color: var(--color-primary);
 }
 
-.bg-primary-custom {
+.bg-secondary-custom {
     background-color: var(--color-secondary);
+}
+
+.text-primary-custom {
+    color: var(--color-text-primary);
+}
+
+.text-secondary-custom {
+    color: var(--color-text-secondary);
 }
 
 .bg-footer {
@@ -47,4 +57,45 @@ body {
 
 footer img {
     width: 100px;
+}
+
+/* Whatsapp icon */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+}
+
+.whatsapp-float:hover {
+    background-color: #128c7e;
+    color: #fff;
+    text-decoration: none;
+}
+
+.fab.fa-whatsapp {
+    margin-top: 16px;
+}
+
+.headline {
+  left: 130px;
+} 
+.clipped {
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 0% 100%);
+}
+@media screen and (max-width: 650px){
+  .headline {
+    left: 20px;
+  } 
+  .clipped {
+    clip-path: none;
+  }
 }

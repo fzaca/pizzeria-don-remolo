@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}Carrito{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5 mb-5 min-vh-100">
+    <div class="d-flex justify-content-center row">
+        <div class="col-md-8">
+
+            <div class="p-2">
+                <h4>Carrito</h4>
+            </div>
+
+            {% for product in cart %}
+            <div
+                class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded">
+                <div class="mr-1"><img class="rounded"
+                        src="{{ product['image_path'] }}" width="70"></div>
+                <div
+                    class="d-flex flex-column align-items-center product-details">
+                    <span class="font-weight-bold">{{ product['title'] }}</span>
+                </div>
+                <div class="d-flex flex-row align-items-center qty">
+                    <h5 class="text-grey mt-1 mr-1 ml-1">{{ product['quantity']
+                        }}</h5></div>
+                <div>
+                    <h5 class="text-grey">${{ product['price'] }}</h5>
+                </div>
+                <form action="/delete_to_cart" , method="post"
+                    class="flex-row d-flex mb-0 align-items-center">
+                    <button type="submit" class="btn btn-link">
+                        <i class="fa fa-trash mb-1 text-danger"></i>
+                    </button>
+                    <input type="hidden" name="pos" value="{{ loop.index0 }}">
+                    <!-- Campo oculto con el precio -->
+                </form>
+            </div>
+            {% endfor %}
+
+            <div
+                class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded justify-content-between">
+                <button
+                    class="btn btn-warning border-0 bg-primary-custom btn-block btn-lg ml-2 pay-button"
+                    type="submit">Proceed to Pay</button>
+                <a href="{{ url_for('index') }}#menu">
+                    <button
+                        class="btn btn-warning border-0 bg-primary-custom btn-block btn-lg ml-2 pay-button"
+                        type="button">Seguir comprando</button>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

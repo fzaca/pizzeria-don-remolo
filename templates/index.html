@@ -5,12 +5,278 @@
 {% block content %}
 
 <!-- Hero -->
+<div class="d-sm-flex align-items-center justify-content-between w-100" style="height: 100vh;">
+  <div class="col-md-4 mx-auto mb-4 mb-sm-0 headline px-5">
+    <span class="text-secondary text-uppercase">La mejor pizza del planeta</span>
+    <h1 class="display-4 my-4 font-weight-bold">Delivery <span style="color: #e74423;">Pizza</span></h1>
+    <a href="#menu" class="btn px-5 py-3 text-white mt-3 mt-sm-0" style="border-radius: 30px; background-color: #e74423;">Ir al menu</a>
+  </div>
+  <!-- in mobile remove the clippath -->
+  <div class="col-md-8 h-100 clipped" style="min-height: 350px; background-image: url(static/images/hero.jpg); background-position: center; background-size: cover;">
+
+  </div>
+</div>
 <!-- Hero -->
 
+<!-- Benefits -->
+<div id="benefits" class="container-fluid text-center py-5 bg-primary-custom">
+  <p>We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+<!-- Benefits -->
 
-<!-- Products -->
-<!-- Products -->
 
+<!-- Menu -->
+<ul class="nav justify-content-center my-5" id="menu">
+  <li class="nav-item">
+    <a class="nav-link text-secondary-custom" href="#pizzas">Pizzas</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-secondary-custom" href="#empanadas">Empanadas</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-secondary-custom" href="#bebidas">Bebidas</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-secondary-custom" href="#postres">Postres</a>
+  </li>
+</ul>
+
+
+<h1 id="pizzas" class="px-5">Pizzas</h1>
+<div class="container-fluid mb-5 px-5">
+  <div class="row">
+
+    <div class="col-md-3">
+      <div class="card bg-secondary-custom shadow-lg">
+        <img src="{{ url_for('static', filename='images/muzzarella.jpg') }}" class="card-img-top" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Muzzarella</h5>
+          <p class="card-text"><strong>Precio:</strong> $10.00</p>
+          <form action="/add_to_cart" method='post' class="row justify-content-between">
+            <input type="hidden" name="price" value="10.00"> <!-- Campo oculto con el precio -->
+            <input type="hidden" name="name" value="muzzarella"> <!-- Campo oculto con el nombre -->
+            <input type="hidden" name="title" value="Muzzarella"> <!-- Campo oculto con el titulo-->
+            <div class="col-md-3"><input type="number" name="quantity" class="form-control" min="1" max="100" value="1" placeholder="Quantity"></div>
+            <div class="col-md-9"><button type="submit" class="btn btn-primary btn-block w-100 bg-primary-custom border-0">Agregar</button></div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+      <div class="col-md-3">
+      <div class="card bg-secondary-custom shadow-lg">
+        <img src="{{ url_for('static', filename='images/napolitana.jpg') }}" class="card-img-top" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Napolitana</h5>
+          <p class="card-text"><strong>Precio:</strong> $12.00</p>
+          <form action="/add_to_cart" method='post' class="row justify-content-between">
+            <input type="hidden" name="price" value="12.00"> <!-- Campo oculto con el precio -->
+            <input type="hidden" name="name" value="napolitana"> <!-- Campo oculto con el nombre -->
+            <input type="hidden" name="title" value="Napolitana"> <!-- Campo oculto con el titulo-->
+            <div class="col-md-3"><input type="number" name="quantity" class="form-control" min="1" max="100" value="1" placeholder="Quantity"></div>
+            <div class="col-md-9"><button type="submit" class="btn btn-primary btn-block w-100 bg-primary-custom border-0">Agregar</button></div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+      <div class="col-md-3">
+      <div class="card bg-secondary-custom shadow-lg">
+        <img src="{{ url_for('static', filename='images/jamonymorron.jpg') }}" class="card-img-top" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Jamon y Morron</h5>
+          <p class="card-text"><strong>Precio:</strong> $15.00</p>
+          <form action="/add_to_cart" method='post' class="row justify-content-between">
+            <input type="hidden" name="price" value="15.00"> <!-- Campo oculto con el precio -->
+            <input type="hidden" name="name" value="jamonymorron"> <!-- Campo oculto con el nombre -->
+            <input type="hidden" name="title" value="Jamon y Morron"> <!-- Campo oculto con el titulo-->
+            <div class="col-md-3"><input type="number" name="quantity" class="form-control" min="1" max="100" value="1" placeholder="Quantity"></div>
+            <div class="col-md-9"><button type="submit" class="btn btn-primary btn-block w-100 bg-primary-custom border-0">Agregar</button></div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<h1 id="empanadas" class="px-5">Empanadas</h1>
+<div class="container-fluid mb-5 px-5">
+  <div class="row">
+
+    <div class="col-md-3">
+      <div class="card bg-secondary-custom shadow-lg">
+        <img src="{{ url_for('static', filename='images/empanada_atun.jpg') }}" class="card-img-top" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Empanada Atun</h5>
+          <p class="card-text"><strong>Precio:</strong> $6.00</p>
+          <form action="/add_to_cart" method='post' class="row justify-content-between">
+            <input type="hidden" name="price" value="6.00"> <!-- Campo oculto con el precio -->
+            <input type="hidden" name="name" value="empanada_atun"> <!-- Campo oculto con el nombre -->
+            <input type="hidden" name="title" value="Empanada Atun"> <!-- Campo oculto con el titulo-->
+            <div class="col-md-3"><input type="number" name="quantity" class="form-control" min="1" max="100" value="1" placeholder="Quantity"></div>
+            <div class="col-md-9"><button type="submit" class="btn btn-primary btn-block w-100 bg-primary-custom border-0">Agregar</button></div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card bg-secondary-custom shadow-lg">
+        <img src="{{ url_for('static', filename='images/empanada_carne.jpg') }}" class="card-img-top" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Empanada Carne</h5>
+          <p class="card-text"><strong>Precio:</strong> $5.50</p>
+          <form action="/add_to_cart" method='post' class="row justify-content-between">
+            <input type="hidden" name="price" value="5.50"> <!-- Campo oculto con el precio -->
+            <input type="hidden" name="name" value="empanada_carne"> <!-- Campo oculto con el nombre -->
+            <input type="hidden" name="title" value="Empanada Carne"> <!-- Campo oculto con el titulo-->
+            <div class="col-md-3"><input type="number" name="quantity" class="form-control" min="1" max="100" value="1" placeholder="Quantity"></div>
+            <div class="col-md-9"><button type="submit" class="btn btn-primary btn-block w-100 bg-primary-custom border-0">Agregar</button></div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card bg-secondary-custom shadow-lg">
+        <img src="{{ url_for('static', filename='images/empanada_jamonyqueso.jpg') }}" class="card-img-top" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Empanada JyQ</h5>
+          <p class="card-text"><strong>Precio:</strong> $7.10</p>
+          <form action="/add_to_cart" method='post' class="row justify-content-between">
+            <input type="hidden" name="price" value="7.10"> <!-- Campo oculto con el precio -->
+            <input type="hidden" name="name" value="empanada_jamonyqueso"> <!-- Campo oculto con el nombre -->
+            <input type="hidden" name="title" value="Empanada JyQ"> <!-- Campo oculto con el titulo-->
+            <div class="col-md-3"><input type="number" name="quantity" class="form-control" min="1" max="100" value="1" placeholder="Quantity"></div>
+            <div class="col-md-9"><button type="submit" class="btn btn-primary btn-block w-100 bg-primary-custom border-0">Agregar</button></div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<h1 id="bebidas" class="px-5">Bebidas</h1>
+<div class="container-fluid mb-5 px-5">
+  <div class="row">
+
+    <div class="col-md-3">
+      <div class="card bg-secondary-custom shadow-lg">
+        <img src="{{ url_for('static', filename='images/agua.jpg') }}" class="card-img-top" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Agua</h5>
+          <p class="card-text"><strong>Precio:</strong> $1.00</p>
+          <form action="/add_to_cart" method='post' class="row justify-content-between">
+            <input type="hidden" name="price" value="1.00"> <!-- Campo oculto con el precio -->
+            <input type="hidden" name="name" value="agua"> <!-- Campo oculto con el nombre -->
+            <input type="hidden" name="title" value="Agua"> <!-- Campo oculto con el titulo-->
+            <div class="col-md-3"><input type="number" name="quantity" class="form-control" min="1" max="100" value="1" placeholder="Quantity"></div>
+            <div class="col-md-9"><button type="submit" class="btn btn-primary btn-block w-100 bg-primary-custom border-0">Agregar</button></div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card bg-secondary-custom shadow-lg">
+        <img src="{{ url_for('static', filename='images/cerveza.jpg') }}" class="card-img-top" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Cerveza</h5>
+          <p class="card-text"><strong>Precio:</strong> $11.50</p>
+          <form action="/add_to_cart" method='post' class="row justify-content-between">
+            <input type="hidden" name="price" value="11.50"> <!-- Campo oculto con el precio -->
+            <input type="hidden" name="name" value="cerveza"> <!-- Campo oculto con el nombre -->
+            <input type="hidden" name="title" value="Cerveza"> <!-- Campo oculto con el titulo-->
+            <div class="col-md-3"><input type="number" name="quantity" class="form-control" min="1" max="100" value="1" placeholder="Quantity"></div>
+            <div class="col-md-9"><button type="submit" class="btn btn-primary btn-block w-100 bg-primary-custom border-0">Agregar</button></div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card bg-secondary-custom shadow-lg">
+        <img src="{{ url_for('static', filename='images/gaseosa.jpg') }}" class="card-img-top" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Gaseosa</h5>
+          <p class="card-text"><strong>Precio:</strong> $5.10</p>
+          <form action="/add_to_cart" method='post' class="row justify-content-between">
+            <input type="hidden" name="price" value="5.10"> <!-- Campo oculto con el precio -->
+            <input type="hidden" name="name" value="gaseosa"> <!-- Campo oculto con el nombre -->
+            <input type="hidden" name="title" value="Gaseosa"> <!-- Campo oculto con el titulo-->
+            <div class="col-md-3"><input type="number" name="quantity" class="form-control" min="1" max="100" value="1" placeholder="Quantity"></div>
+            <div class="col-md-9"><button type="submit" class="btn btn-primary btn-block w-100 bg-primary-custom border-0">Agregar</button></div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<h1 id="postres" class="px-5">Postres</h1>
+<div class="container-fluid mb-5 px-5">
+  <div class="row">
+
+    <div class="col-md-3">
+      <div class="card bg-secondary-custom shadow-lg">
+        <img src="{{ url_for('static', filename='images/almendrado.jpg') }}" class="card-img-top" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Almendrado</h5>
+          <p class="card-text"><strong>Precio:</strong> $14.00</p>
+          <form action="/add_to_cart" method='post' class="row justify-content-between">
+            <input type="hidden" name="price" value="14.00"> <!-- Campo oculto con el precio -->
+            <input type="hidden" name="name" value="almendrado"> <!-- Campo oculto con el nombre -->
+            <input type="hidden" name="title" value="Almendrado"> <!-- Campo oculto con el titulo-->
+            <div class="col-md-3"><input type="number" name="quantity" class="form-control" min="1" max="100" value="1" placeholder="Quantity"></div>
+            <div class="col-md-9"><button type="submit" class="btn btn-primary btn-block w-100 bg-primary-custom border-0">Agregar</button></div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card bg-secondary-custom shadow-lg">
+        <img src="{{ url_for('static', filename='images/bombones.jpg') }}" class="card-img-top" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Bombones</h5>
+          <p class="card-text"><strong>Precio:</strong> $11.50</p>
+          <form action="/add_to_cart" method='post' class="row justify-content-between">
+            <input type="hidden" name="price" value="11.50"> <!-- Campo oculto con el precio -->
+            <input type="hidden" name="name" value="bombones"> <!-- Campo oculto con el nombre -->
+            <input type="hidden" name="title" value="Bombones"> <!-- Campo oculto con el titulo-->
+            <div class="col-md-3"><input type="number" name="quantity" class="form-control" min="1" max="100" value="1" placeholder="Quantity"></div>
+            <div class="col-md-9"><button type="submit" class="btn btn-primary btn-block w-100 bg-primary-custom border-0">Agregar</button></div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card bg-secondary-custom shadow-lg">
+        <img src="{{ url_for('static', filename='images/helado.jpg') }}" class="card-img-top" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Helado</h5>
+          <p class="card-text"><strong>Precio:</strong> $12.10</p>
+          <form action="/add_to_cart" method='post' class="row justify-content-between">
+            <input type="hidden" name="price" value="12.10"> <!-- Campo oculto con el precio -->
+            <input type="hidden" name="name" value="helado"> <!-- Campo oculto con el nombre -->
+            <input type="hidden" name="title" value="Helado"> <!-- Campo oculto con el titulo-->
+            <div class="col-md-3"><input type="number" name="quantity" class="form-control" min="1" max="100" value="1" placeholder="Quantity"></div>
+            <div class="col-md-9"><button type="submit" class="btn btn-primary btn-block w-100 bg-primary-custom border-0">Agregar</button></div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- Products -->
 
 <!-- About us-->
 <!-- About us-->
