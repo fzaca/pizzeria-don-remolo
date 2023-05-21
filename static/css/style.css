@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
+
+:root {
+    /* Paleta colores */
+    --color-primary: #e74423; /* Color primario */
+    --color-secondary: #f1f0de; /* Color secundario */
+    --color-text-primary: #333; /* Color de texto principal */
+    --color-text-secondary: #333; /* Color de texto principal */
+    --color-background-secondary: #333; /* Color de texto principal */
+    --color-background: #f1f0de; /* Color de fondo */
+    /* Tipografia */
+    --normal: 18px;
+    /* Espaciado */
+    --space: 10px;
+    /* Box shadow */
+    --box: 0px 0.625vh 1.25vh rgba(0, 0, 0, 0.1);
+}
+
+html,
+body {
+    padding: 0px;
+    margin: 0px;
+    font-size: var(--normal);
+    font-family: 'Rubik', sans-serif;
+    background-color: var(--color-background);
+}
+
+.navbar {
+    box-shadow: var(--box);
+}
+
+.navbar img {
+    width: 70px;
+}
+
+.bg-primary-custom {
+    background-color: var(--color-primary);
+}
+
+.bg-primary-custom {
+    background-color: var(--color-secondary);
+}
+
+.bg-footer {
+    background-color: var(--color-background-secondary);
+}
+
+footer img {
+    width: 100px;
+}
